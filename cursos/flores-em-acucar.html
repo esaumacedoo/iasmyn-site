@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores em Açúcar - Iasmyn Montenegro</title>
+    <meta name="description" content="Descubra como você pode até triplicar o valor dos seus bolos artísticos aplicando flores em açúcar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        :root {
+            --mint: #82C5C0;
+            --rose: #D98CA0;
+            --cream: #FAF6F2;
+            --dark: #1A1410;
+        }
+        
+        /* Premium Overrides & Specific Page Styles */
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--mint);
+            color: var(--dark);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Jost', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(130, 197, 192, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(130, 197, 192, 0.4);
+            background-color: #6fb5b0;
+        }
+        .btn-rose {
+            background-color: var(--rose);
+            color: white;
+            box-shadow: 0 10px 20px rgba(217, 140, 160, 0.3);
+        }
+        .btn-rose:hover {
+            background-color: #c87a8f;
+            box-shadow: 0 15px 25px rgba(217, 140, 160, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1f1d1c;
+            color: var(--cream);
+            position: relative;
+            padding: 8rem 0 6rem 0;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6585-1024x1024.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .course-name-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--mint);
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+        .hero-title {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--rose);
+        }
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .benefit-card {
+            padding: 3rem 2rem;
+            background: var(--cream);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--mint);
+            margin-bottom: 1.5rem;
+        }
+        .benefit-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 5rem 0;
+            background-color: var(--cream);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* For Whom */
+        .for-whom {
+            padding: 6rem 0;
+            background-color: var(--dark);
+            color: var(--cream);
+        }
+        .for-whom .section-title {
+            color: var(--rose);
+        }
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .profile-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-top: 3px solid var(--mint);
+        }
+        .profile-card h3 {
+            font-size: 1.5rem;
+            color: var(--mint);
+            margin-bottom: 1rem;
+        }
+
+        /* Curriculum */
+        .curriculum {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        .module-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .module {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--rose);
+        }
+        .module h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .flower-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .flower-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .flower-item::before {
+            content: '✿';
+            color: var(--rose);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--cream);
+        }
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .testi-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Certificate */
+        .certificate {
+            padding: 6rem 0;
+            background-color: white;
+            text-align: center;
+        }
+        .cert-img {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--dark), #2a221b);
+            color: var(--cream);
+        }
+        .pricing-box {
+            background: white;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .pricing-box::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            background: linear-gradient(45deg, var(--mint), var(--rose));
+            z-index: -1;
+            border-radius: 25px;
+        }
+        .price-old {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.2rem;
+        }
+        .price-new {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1;
+            margin: 1rem 0;
+        }
+        .price-installments {
+            font-size: 1.5rem;
+            color: var(--rose);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .guarantee {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .guarantee img {
+            width: 80px;
+        }
+        .payment-methods {
+            margin-top: 2rem;
+        }
+        .payment-methods img {
+            max-width: 300px;
+            opacity: 0.7;
+        }
+
+        /* Instructor */
+        .instructor {
+            padding: 6rem 0;
+            background-color: var(--cream);
+        }
+        .instructor-flex {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        .instructor-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .instructor-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-tagline { font-size: 1.5rem; }
+            .instructor-flex { flex-direction: column-reverse; }
+            .pricing-box { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="background: var(--dark); padding: 1rem 0; text-align: center;">
+        <div class="container">
+            <a href="../index.html" style="color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 2px;">IASMYN MONTENEGRO</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="course-name-label">Flores em Açúcar</span>
+                <h1 class="hero-title">Flores em Açúcar</h1>
+                <p class="hero-tagline">Descubra como você pode até triplicar o valor dos seus bolos artísticos aplicando flores em açúcar</p>
+                <p class="hero-subtitle">Aprenda a produzir arranjos florais que combinam com qualquer tipo de bolo e transformam bolos comuns em obras de arte.</p>
+                <a href="#pricing" class="btn-primary">Quero Aumentar o Valor dos Meus Bolos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌸</div>
+                    <h3 class="benefit-title">Seja Especialista em Flores de Açúcar</h3>
+                    <p>Aprenda do zero ao avançado as técnicas de modelagem botânica.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3 class="benefit-title">Domine Técnicas que vão Encantar seus Clientes</h3>
+                    <p>Produza flores tão realistas que seus clientes duvidarão que são de açúcar.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3 class="benefit-title">Aumente o Valor dos seus Bolos Artísticos</h3>
+                    <p>Bolos decorados com flores em açúcar são percebidos como verdadeiras obras de arte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">O que você será capaz de criar</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6590-1024x1024.jpg" class="gallery-img" loading="lazy" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6589-1024x1024.jpg" class="gallery-img" loading="lazy" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6588-1024x1024.jpg" class="gallery-img" loading="lazy" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6587-1024x1024.jpg" class="gallery-img" loading="lazy" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IMG_6591-1024x1024.jpg" class="gallery-img" loading="lazy" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/Design-sem-nome-20.png" class="gallery-img" loading="lazy" alt="Galeria"></div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#pricing" class="btn-primary btn-rose">Quero Fazer Flores Assim</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Whom -->
+    <section class="for-whom">
+        <div class="container">
+            <h2 class="section-title">Para quem é este curso?</h2>
+            <div class="profiles-grid">
+                <div class="profile-card">
+                    <h3>Iniciante na Confeitaria Artística</h3>
+                    <p>Está começando e quer aprender técnicas profissionais desde o início para entrar no mercado já se destacando.</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Quer Inovar na Confeitaria</h3>
+                    <p>Já faz bolos, mas sente que falta algo especial, uma assinatura única para se destacar da concorrência.</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Busca Lucrar e Valorizar seus Bolos</h3>
+                    <p>Quer aumentar o ticket médio e atrair clientes que valorizam exclusividade e casamentos luxuosos.</p>
+                </div>
+                <div class="profile-card">
+                    <h3>Apaixonada por Flores</h3>
+                    <p>Ama a delicadeza botânica e quer transformar essa paixão em arte comestível altamente rentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender</h2>
+            <div class="module-list">
+                
+                <div class="module">
+                    <h3>Módulo 1: Materiais Necessários</h3>
+                    <p>Conheça as ferramentas essenciais, tipos de pasta ideais e como usar corantes para obter cores perfeitas. Um guia completo para você começar com o pé direito.</p>
+                </div>
+
+                <div class="module">
+                    <h3>Módulo 2: Massas para Flores</h3>
+                    <p>Aprenda a fazer e manipular os melhores tipos de massas, garantindo acabamento impecável, flexibilidade e fácil manuseio.</p>
+                </div>
+
+                <div class="module" style="border-left-color: var(--mint);">
+                    <h3>Módulo 3: Produção de Flores (Prática)</h3>
+                    <p>O coração do curso. Aprenda o passo a passo para modelar, texturizar e pintar:</p>
+                    <div class="flower-list">
+                        <div class="flower-item">Peônias</div>
+                        <div class="flower-item">Astromélias</div>
+                        <div class="flower-item">Cosmos</div>
+                        <div class="flower-item">Hibiscos</div>
+                        <div class="flower-item">Orquídeas (+ Variações)</div>
+                        <div class="flower-item">Flores Borboleta</div>
+                        <div class="flower-item">Rosas (+ Variações)</div>
+                        <div class="flower-item">Flores de Preenchimento</div>
+                        <div class="flower-item">Folhas (+ Variações)</div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h3>Módulo 4: Armazenamento</h3>
+                    <p>Técnicas essenciais sobre como secar e conservar suas flores em açúcar em perfeito estado para uso posterior, evitando quebras e umidade.</p>
+                </div>
+
+                <div class="module">
+                    <h3>Módulo 5: Aplicação em Bolos</h3>
+                    <p>Como montar os arranjos, fixar as flores de forma segura e elegante nos bolos sem danificá-los.</p>
+                </div>
+
+                <div class="module" style="border-left-color: var(--dark);">
+                    <h3>Material Complementar</h3>
+                    <p>Apostila completa em PDF para acompanhar as aulas, anotar medidas e ter um guia rápido sempre à mão.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que dizem as alunas</h2>
+            <div class="testi-grid">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/Depoimentos-1.png" alt="Depoimento 1" class="testi-img">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/Depoimentos-2.png" alt="Depoimento 2" class="testi-img">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/Depoimentos-3.png" alt="Depoimento 3" class="testi-img">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/Depoimentos-4.png" alt="Depoimento 4" class="testi-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate -->
+    <section class="certificate">
+        <div class="container">
+            <h2 class="section-title">Certificado de Conclusão</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Ao concluir o curso, você receberá o seu certificado personalizado para atestar sua nova especialidade.</p>
+            <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IM-Certificados-1.png" alt="Certificado do Curso" class="cert-img">
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-box">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IM-Capas-1080px-21.png" alt="Flores em Açúcar" style="width: 100%; border-radius: 10px; margin-bottom: 2rem;">
+                
+                <h3 style="font-size: 2.5rem; color: var(--rose);">Flores em Açúcar</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Acesso completo por 12 meses + Atualizações</p>
+                
+                <div class="price-old">De R$ 597,00 por apenas</div>
+                <div class="price-installments">12x de R$ 27,07</div>
+                <div style="font-size: 1.2rem;">ou <strong style="color: var(--dark); font-size: 1.8rem;">R$ 247,00</strong> à vista</div>
+                
+                <div style="margin-top: 2.5rem;">
+                    <a href="https://pay.hotmart.com/Y76151875Q?off=duy2q18d&checkoutMode=10" class="btn-primary" style="display: block; width: 100%; box-sizing: border-box; font-size: 1.3rem; padding: 1.5rem;">QUERO GARANTIR MINHA VAGA</a>
+                </div>
+
+                <div class="guarantee">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/Garantia-de-7-dias.png" alt="Garantia de 7 dias">
+                    <div style="text-align: left; font-size: 0.9rem;">
+                        <strong>Garantia Incondicional de 7 Dias</strong><br>
+                        Seu risco é zero. Se não gostar, devolvemos seu dinheiro.
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #666;">Compra 100% Segura. Formas de pagamento:</p>
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/metodos-pagamento.png.png" alt="Métodos de Pagamento">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section class="instructor">
+        <div class="container instructor-flex">
+            <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/01/IM-Capas-1080px-19.png" alt="Iasmyn Montenegro" class="instructor-img">
+            <div class="instructor-text">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">Sua Professora</h2>
+                <h3 style="font-size: 2.5rem; color: var(--rose);">Iasmyn Montenegro</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Formada em Gastronomia e especialista em Confeitaria Artística.</p>
+                <p>Com mais de <strong>16 anos de experiência</strong> no mercado de bolos decorados de alto padrão, Iasmyn já ajudou a transformar a vida de <strong>mais de 2.000 alunas</strong> ao redor do mundo.</p>
+                <p>Sua paixão é ensinar não apenas receitas, mas técnicas refinadas que permitem que confeiteiras comuns se tornem verdadeiras artistas, valorizando seu trabalho e alcançando a independência financeira através da arte em açúcar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA & Footer -->
+    <section style="background-color: var(--mint); padding: 5rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--dark); margin-bottom: 2rem;">Transforme seus bolos em obras de arte hoje mesmo.</h2>
+            <a href="#pricing" class="btn-primary" style="background-color: var(--dark); color: var(--cream);">SIM, EU QUERO COMEÇAR AGORA</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Iasmyn Montenegro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso+Flores+em+A%C3%A7%C3%BAcar" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
