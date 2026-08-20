@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolo Camponesa - Iasmyn Montenegro</title>
+    
+    <!-- Design System Linking -->
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Inline styles for page-specific layout & utility classes if missing from global style.css -->
+    <style>
+        :root {
+            --primary: #c29d7c; /* Soft luxury gold/nude */
+            --primary-dark: #a37c5a;
+            --dark-bg: #1f1d1c;
+            --light-bg: #f9f7f4;
+            --text-dark: #333;
+            --text-light: #f5f5f5;
+        }
+        
+        body.sales-page {
+            font-family: 'Jost', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6, .course-title, .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 5px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            box-shadow: 0 5px 15px rgba(194, 157, 124, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 1rem;
+        }
+
+        /* Header */
+        .site-header {
+            padding: 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* Hero */
+        .hero-section {
+            padding: 120px 0;
+            background-color: #1f1d1c;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-1024x1024.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .course-name-label {
+            display: inline-block;
+            background-color: rgba(194, 157, 124, 0.2);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .course-title {
+            font-size: 3.5rem;
+            margin: 0 0 20px;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        /* Features */
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .section-desc {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-top: 3px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Gallery */
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        .image-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .image-gallery-grid img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease;
+        }
+
+        .image-gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            text-align: center;
+            position: relative;
+            border: 1px solid #eaeaea;
+        }
+
+        .pricing-card.premium-card {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.premium-card {
+                transform: scale(1);
+            }
+        }
+
+        .badge-premium {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .price .old-price {
+            display: block;
+            font-size: 1.1rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .price .current-price {
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            margin-top: 5px;
+            font-style: normal;
+        }
+
+        .pricing-features li i::before {
+            content: '✓';
+            font-weight: bold;
+        }
+        
+        .payment-img {
+            max-width: 300px;
+            height: auto;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .secure-text {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Instructor */
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .instructor-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .instructor-name {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .instructor-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .instructor-grid {
+                grid-template-columns: 1fr;
+            }
+            .course-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* FAQ */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 25px 0;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .faq-question {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin: 0 0 10px 0;
+            cursor: pointer;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+        }
+
+        .faq-answer p {
+            color: #666;
+            margin: 0;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Bottom */
+        .final-cta-section {
+            background-color: var(--primary-dark);
+            color: #fff;
+        }
+        
+        .final-cta-section .section-title,
+        .final-cta-section .section-desc {
+            color: #fff;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #111;
+            color: #888;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-5px);
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="sales-page">
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="logo">Iasmyn Montenegro</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="course-name-label">Bolo Camponesa</span>
+                    <h1 class="course-title">Domine as técnicas de modelagem por trás dos bolos de pasta americana que mais se destacam</h1>
+                    <p class="subtitle">Tenha repertório técnico para criar diversas decorações com segurança e personalidade, e receber o reconhecimento que merece</p>
+                    <div class="hero-cta">
+                        <a href="#ofertas" class="btn btn-primary btn-large">Quero garantir minha vaga</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What you'll learn Section -->
+        <section class="learning-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">O que você vai aprender</h2>
+                    <p class="section-desc">Um conteúdo completo e direto ao ponto para transformar suas criações e elevar o nível dos seus bolos.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Camponesas 3D e 2D</h3>
+                        <p>Aprenda a modelagem estruturada perfeita para figuras em diferentes dimensões, trazendo personalidade para seus bolos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Cestinha esculpida</h3>
+                        <p>Domine técnicas precisas de escultura em bolo para criar efeitos realistas e impressionantes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Margaridas, borboletas e mais</h3>
+                        <p>Detalhes que enriquecem a composição do bolo com acabamentos finos e delicados.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Aplicações com glacê real</h3>
+                        <p>Aprenda o uso correto do glacê para construir texturas autênticas e decorações complementares.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Texturas e movimento</h3>
+                        <p>Dê vida e realismo às suas criações com técnicas avançadas de textura e sensação de movimento.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Material de Apoio</h3>
+                        <p>Apostila em PDF com todas as receitas e passo a passo, além de mais de 20 Aulas em Full HD.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Inspire-se com os resultados</h2>
+                    <p class="section-desc">Veja o padrão de excelência que você será capaz de alcançar.</p>
+                </div>
+                <div class="image-gallery-grid">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-1024x1024.png" alt="Bolo Camponesa Modelo 1">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-3-1024x1024.png" alt="Bolo Camponesa Modelo 2">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-5-1024x1024.png" alt="Bolo Camponesa Modelo 3">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-2-1024x1024.png" alt="Bolo Camponesa Modelo 4">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-4-1024x1024.png" alt="Bolo Camponesa Modelo 5">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/IM-Capas-600px-1080-x-1080-px-1-1024x1024.png" alt="Bolo Camponesa Modelo 6">
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="ofertas" class="pricing-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Escolha o seu plano</h2>
+                    <p class="section-desc">Aproveite a oferta especial por tempo limitado e comece agora mesmo a sua evolução na confeitaria.</p>
+                </div>
+                <div class="pricing-grid">
+                    
+                    <!-- Oferta Básica -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Oferta Básica</h3>
+                            <div class="price">
+                                <span class="old-price">de R$ 147</span>
+                                <span class="current-price">R$ 57</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i></i> Curso Completo Bolo Camponesa</li>
+                            <li><i></i> +20 Aulas em Full HD</li>
+                            <li><i></i> Apostila Completa em PDF</li>
+                            <li><i></i> 12 meses de acesso à plataforma</li>
+                            <li><i></i> Não exige experiência prévia</li>
+                        </ul>
+                        <a href="https://pay.hotmart.com/V101774218S?off=5cjncf46&checkoutMode=10" target="_blank" class="btn btn-outline">Comprar Oferta Básica</a>
+                    </div>
+
+                    <!-- Combo Premium -->
+                    <div class="pricing-card premium-card">
+                        <div class="badge-premium">Mais Escolhido</div>
+                        <div class="pricing-header">
+                            <h3>Combo Premium</h3>
+                            <div class="price">
+                                <span class="old-price">de R$ 247</span>
+                                <span class="current-price">R$ 87</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i></i> <strong>Acesso Vitalício</strong> ao Bolo Camponesa</li>
+                            <li><i></i> <strong>Bônus Especial: Curso Massas e Recheios</strong></li>
+                            <li><i></i> 4 Massas (Baunilha, Chocolate, Goiabada, Red Velvet)</li>
+                            <li><i></i> 4 Recheios (Doce de leite, Chocolate, Maracujá, Coco)</li>
+                            <li><i></i> +20 Aulas em Full HD & Apostilas</li>
+                        </ul>
+                        <a href="https://pay.hotmart.com/V101774218S?off=ph2gfj2r&checkoutMode=10" target="_blank" class="btn btn-primary">Garantir Combo Premium</a>
+                    </div>
+
+                </div>
+                
+                <div class="payment-methods text-center mt-4">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/metodos-pagamento.png.png" alt="Métodos de Pagamento Seguros" class="payment-img">
+                    <p class="secure-text">Compra 100% segura. Acesso imediato pelo e-mail da Hotmart.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Section -->
+        <section class="instructor-section section-padding bg-light">
+            <div class="container">
+                <div class="instructor-grid">
+                    <div class="instructor-img">
+                        <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2025/09/ONO_9576-1024x683.jpg" alt="Iasmyn Montenegro - Professora">
+                    </div>
+                    <div class="instructor-info">
+                        <h2 class="section-title">Com quem você vai aprender?</h2>
+                        <h3 class="instructor-name">Iasmyn Montenegro</h3>
+                        <p>Sou Iasmyn Montenegro, formada em Gastronomia, e moro em João Pessoa-PB. Com mais de 16 anos de experiência no mercado de confeitaria artística, já transformei a vida e o negócio de mais de 2.000 alunas.</p>
+                        <p>Minha missão é te ensinar as técnicas mais avançadas de modelagem em pasta americana de forma simples e descomplicada. Quero que você crie bolos com segurança, imprima sua personalidade em cada obra e receba todo o reconhecimento que merece na sua região.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Como vou receber o acesso ao curso?</h3>
+                        <div class="faq-answer">
+                            <p>O acesso é imediato após a confirmação do pagamento. Você receberá as instruções e o link de acesso no e-mail cadastrado durante a compra, através da plataforma Hotmart.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Por quanto tempo terei acesso às aulas?</h3>
+                        <div class="faq-answer">
+                            <p>O tempo de acesso depende da oferta escolhida: na Oferta Básica você terá 12 meses (1 ano) de acesso. Escolhendo o Combo Premium, o seu acesso ao curso será vitalício.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">Preciso ter experiência prévia com pasta americana?</h3>
+                        <div class="faq-answer">
+                            <p>Não é necessária experiência prévia! O método foi desenhado detalhadamente para atender tanto iniciantes que nunca trabalharam com modelagem, quanto profissionais que desejam aprimorar seu repertório e qualidade de acabamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta-section section-padding text-center">
+            <div class="container">
+                <h2 class="section-title">Chegou a hora de dar o próximo passo na sua carreira</h2>
+                <p class="section-desc">Não perca a chance de dominar a modelagem e criar bolos inesquecíveis. Aproveite as condições especiais e entre para o grupo de confeiteiras de sucesso!</p>
+                <a href="#ofertas" class="btn btn-outline mt-3" style="border-color: #fff; color: #fff;">Quero começar agora</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Iasmyn Montenegro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." class="floating-whatsapp" target="_blank" aria-label="Tirar dúvidas no WhatsApp">
+        <svg viewBox="0 0 32 32" width="34" height="34" fill="currentColor">
+            <path d="M16 2a13 13 0 0 0-11 19.9l-2 5.9 6.2-1.9A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.2 1.3-3.9-.3-.5A11 11 0 1 1 16 26zm6-8.2c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.1 1.1s-1.8.8-3.4-1.3c-.6-.7-1-1.6-1.1-1.9-.1-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4-.1-.5-.1-.3-.6-1.5-.9-2-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.4 5.3 4.7 2 .8 2.7.9 3.6.8.9-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z"/>
+        </svg>
+    </a>
+
+</body>
+</html>

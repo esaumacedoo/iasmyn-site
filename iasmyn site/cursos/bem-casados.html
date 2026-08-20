@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-casados by I.M.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS & JS -->
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    
+    <style>
+        :root {
+            --mint: #82C5C0;
+            --rose: #D98CA0;
+            --cream: #FAF6F2;
+            --dark: #1A1410;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Jost', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--cream);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .home-link {
+            color: var(--cream);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .home-link:hover {
+            color: var(--mint);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--mint);
+            color: var(--dark);
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--mint);
+            box-shadow: 0 4px 15px rgba(130, 197, 192, 0.4);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--mint);
+        }
+
+        .btn-rose {
+            background-color: var(--rose);
+            color: white;
+            border-color: var(--rose);
+            box-shadow: 0 4px 15px rgba(217, 140, 160, 0.4);
+        }
+
+        .btn-rose:hover {
+            background-color: transparent;
+            color: var(--rose);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1f1d1c;
+            color: var(--cream);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/IM-Capas-1080px-10.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .course-name-label {
+            display: inline-block;
+            background-color: var(--rose);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--mint);
+        }
+
+        .hero-text p.subtitle {
+            font-size: 22px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(250, 246, 242, 0.1);
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            padding: 40px 30px;
+            background-color: var(--cream);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--rose);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 0 0 100px;
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Profiles */
+        .profiles {
+            padding: 100px 0;
+            background-color: var(--mint);
+            color: var(--dark);
+        }
+
+        .profiles .section-title {
+            color: var(--dark);
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .profile-icon {
+            background-color: var(--dark);
+            color: var(--mint);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Curriculum */
+        .curriculum {
+            padding: 100px 0;
+            background-color: var(--cream);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .module-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .module-card h3 {
+            font-size: 26px;
+            color: var(--rose);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--cream);
+            padding-bottom: 10px;
+        }
+
+        .module-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .module-card ul li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--mint);
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .testimonial-img img {
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Certificate */
+        .certificate {
+            padding: 100px 0;
+            background-color: var(--dark);
+            color: var(--cream);
+        }
+
+        .cert-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .cert-text h2 {
+            font-size: 42px;
+            color: var(--mint);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 100px 0;
+            background-color: var(--cream);
+            text-align: center;
+        }
+
+        .price-box {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--rose);
+        }
+
+        .price-box h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .price-details {
+            margin: 30px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 20px;
+        }
+
+        .new-price {
+            font-size: 60px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--mint);
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        .installments {
+            font-size: 24px;
+            color: var(--rose);
+            font-weight: 600;
+        }
+
+        .guarantee {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .guarantee img {
+            max-width: 80px;
+        }
+
+        .payment-methods {
+            margin-top: 30px;
+        }
+
+        .payment-methods img {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Instructor */
+        .instructor {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .instructor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .instructor-img img {
+            border-radius: 20px;
+        }
+
+        .instructor-text h2 {
+            font-size: 42px;
+            color: var(--rose);
+            margin-bottom: 20px;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 100px 0;
+            background-color: var(--mint);
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 42px;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #888;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .cert-content, .instructor-content {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid, .gallery-grid, .profiles-grid, .modules-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 40px;
+            }
+            .hero {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="header-logo">I.M.</div>
+            <nav>
+                <a href="../index.html" class="home-link">Voltar para Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="course-name-label">Bem-Casados by I.M.</div>
+                <h1>Descubra o segredo para produzir bem-casados perfeitos que serão destaque na sua região</h1>
+                <p class="subtitle">Aplique o meu processo de produção de bem-casados e seja mais valorizada atendendo festas e eventos.</p>
+                <a href="https://pay.hotmart.com/Y83012904O?checkoutMode=10" class="btn">Garantir Minha Vaga</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/4-1.png" alt="Bem-casados">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Receitas Infalíveis</h3>
+                    <p>Receitas e técnicas testadas e aprovadas para bem-casados perfeitos, sem erro.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎀</div>
+                    <h3>Acabamento Profissional</h3>
+                    <p>Montagem e acabamento impecável para encantar os clientes mais exigentes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Lucratividade</h3>
+                    <p>Precificação correta e estratégica para transformar sua paixão em um negócio rentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/17-1024x1024.png" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/15-1024x1024.png" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/14-1-1024x1024.png" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/13-1-1024x1024.png" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/18-1024x1024.png" alt="Galeria"></div>
+                <div class="gallery-item"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/19-1024x1024.png" alt="Galeria"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Whom -->
+    <section class="profiles">
+        <div class="container">
+            <h2 class="section-title text-center" style="text-align: center;">Para quem é este curso?</h2>
+            <div class="profiles-grid">
+                <div class="profile-card">
+                    <div class="profile-icon">1</div>
+                    <div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px;">Iniciante na Confeitaria</h3>
+                        <p>Quer aprender a fazer bem-casados incríveis com técnicas simples, mesmo sendo total iniciante.</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">2</div>
+                    <div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px;">Quer se Especializar</h3>
+                        <p>Já tem experiência na área e quer adicionar uma opção altamente lucrativa ao seu negócio.</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">3</div>
+                    <div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px;">Busca um Diferencial</h3>
+                        <p>Quer ter os bem-casados como um diferencial lucrativo e atrativo no seu cardápio de doces.</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-icon">4</div>
+                    <div>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px;">Apaixonada pela Confeitaria</h3>
+                        <p>Deseja produzir bem-casados com qualidade de confeitaria profissional para encantar a todos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title text-center" style="text-align: center;">O que você vai encontrar no curso</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <h3>Módulo 1: Massas</h3>
+                    <ul>
+                        <li>Como bater a massa perfeita</li>
+                        <li>Massa de baunilha</li>
+                        <li>Massa de chocolate</li>
+                        <li>Massa de pão-de-ló</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>Módulo 2: Recheios</h3>
+                    <ul>
+                        <li>Recheio de doce de leite</li>
+                        <li>Recheio de Ninho</li>
+                        <li>Recheio com oleaginosas</li>
+                        <li>Produção de doce de leite na lata</li>
+                        <li>Organização de recheios prontos</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>Módulo 3: Calda</h3>
+                    <ul>
+                        <li>Preparo da calda para bem-casados</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>Módulo 4: Montagem e Armazenamento</h3>
+                    <ul>
+                        <li>Montagem do bem-casado</li>
+                        <li>Armazenamento ideal</li>
+                        <li>Uso correto do plástico celofane</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>Módulo 5: Embalagens</h3>
+                    <ul>
+                        <li>Tudo sobre embalagens</li>
+                        <li>Fitas de cetim</li>
+                        <li>Acessórios</li>
+                        <li>Passo a passo da embalagem</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <h3>Módulo 6: Laços e Precificação</h3>
+                    <ul>
+                        <li>Técnicas de laço (direto, separado, channel)</li>
+                        <li>Técnicas com barbante</li>
+                        <li>Precificação correta de bem-casados</li>
+                        <li>Planilhamento de custos (fixos e variáveis)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que dizem nossas alunas</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-img"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/3-4.png" alt="Depoimento"></div>
+                <div class="testimonial-img"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/2-4.png" alt="Depoimento"></div>
+                <div class="testimonial-img"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/4-2.png" alt="Depoimento"></div>
+                <div class="testimonial-img"><img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/1-4.png" alt="Depoimento"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate -->
+    <section class="certificate">
+        <div class="container cert-content">
+            <div class="cert-image">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/IM-Certificados.png" alt="Certificado de Conclusão">
+            </div>
+            <div class="cert-text">
+                <h2>Certificado de Conclusão</h2>
+                <p style="font-size: 18px; line-height: 1.8;">Ao concluir o curso, você receberá o seu certificado personalizado, com a merecida aprovação de competência, pronto para ser impresso e exposto na sua confeitaria!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor -->
+    <section class="instructor">
+        <div class="container instructor-content">
+            <div class="instructor-text">
+                <h2>Sua Professora, Iasmyn Montenegro</h2>
+                <p style="font-size: 18px; margin-bottom: 20px;">Com mais de 16 anos de experiência na área e formada em Gastronomia, Iasmyn dedicou sua carreira a aperfeiçoar a arte da confeitaria fina para eventos.</p>
+                <p style="font-size: 18px;">Hoje, com mais de 2.000 alunas transformadas por seus métodos, ela compartilha seus segredos de forma didática e acessível, para que você também possa ser uma confeiteira de sucesso e destaque na sua região.</p>
+            </div>
+            <div class="instructor-img">
+                <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/IM-Capas-1080px-7.png" alt="Iasmyn Montenegro">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <div class="price-box">
+                <h2>Curso Completo: Bem-casados</h2>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px; font-size: 18px; color: #555;">
+                    <li>✓ 12 meses de acesso</li>
+                    <li>✓ Suporte ativo para dúvidas</li>
+                    <li>✓ Certificado de conclusão</li>
+                </ul>
+                <div class="price-details">
+                    <div class="old-price">De R$ 267,00 por apenas</div>
+                    <div class="installments">12x de R$ 13,45</div>
+                    <div style="font-size: 16px; color: #888;">ou</div>
+                    <div class="new-price">R$ 127</div>
+                    <div style="font-size: 16px; color: #888;">à vista</div>
+                </div>
+                <a href="https://pay.hotmart.com/Y83012904O?checkoutMode=10" class="btn btn-rose" style="width: 100%; box-sizing: border-box;">Quero Começar Agora</a>
+                
+                <div class="payment-methods">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/metodos-pagamento.png.png" alt="Métodos de Pagamento">
+                </div>
+                
+                <div class="guarantee">
+                    <img src="https://iasmynmontenegro.com.br/wp-content/uploads/2024/11/Garantia-de-7-dias.png" alt="Garantia de 7 dias">
+                    <div style="text-align: left;">
+                        <strong style="display: block; color: var(--dark);">Risco Zero!</strong>
+                        <span style="font-size: 14px; color: #666;">Garantia incondicional de 7 dias.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronta para transformar a sua confeitaria?</h2>
+            <a href="https://pay.hotmart.com/Y83012904O?checkoutMode=10" class="btn">Garantir Minha Vaga Agora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Iasmyn Montenegro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.059 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
