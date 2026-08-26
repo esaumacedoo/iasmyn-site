@@ -1,0 +1,798 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterclass Bolo Floral | Iasmyn Montenegro</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles and Scripts -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* Premium Soft Luxury Aesthetic Specifics for Sales Page */
+        :root {
+            --primary: #dcb3a0;
+            --primary-dark: #b88d7a;
+            --text-dark: #2c2a29;
+            --text-light: #f5f2f0;
+            --bg-light: #faf8f7;
+            --bg-dark: #1f1d1c;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Jost', sans-serif;
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-home {
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: var(--primary);
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        .btn-outline-light {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: var(--text-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/ONO_9576-1024x683.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-pretitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .hero h2 {
+            font-family: var(--font-body);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--bg-dark);
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(220, 179, 160, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Section Global */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+        }
+
+        /* What You'll Learn */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .learn-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid rgba(220, 179, 160, 0.2);
+            transition: var(--transition);
+        }
+
+        .learn-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .learn-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, var(--bg-dark), #3a3634);
+            color: var(--text-light);
+            border: none;
+        }
+        
+        .bonus-card h3 {
+            color: var(--primary);
+        }
+        
+        .bonus-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery-section {
+            background-color: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: var(--radius-md);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* Pricing */
+        .pricing-section {
+            background-color: var(--bg-light);
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.premium {
+            border: 2px solid var(--primary);
+            transform: scale(1.03);
+            box-shadow: 0 20px 60px rgba(220, 179, 160, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.premium {
+                transform: none;
+            }
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--bg-dark);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--bg-dark);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: #666;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            color: var(--primary-dark);
+            font-weight: bold;
+        }
+        
+        .premium .plan-features li::before {
+            color: var(--primary);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--bg-dark);
+            border: 2px solid var(--bg-dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .payment-methods {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .payment-methods img {
+            max-width: 300px;
+            opacity: 0.7;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #fff;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            color: #555;
+        }
+
+        /* Bio Section */
+        .bio-section {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .bio-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bio-img-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        
+        .bio-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-lg);
+            z-index: 1;
+        }
+
+        .bio-img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .bio-content {
+            flex: 1.2;
+        }
+
+        .bio-content h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .bio-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            border-left: 2px solid var(--primary);
+            padding-left: 15px;
+        }
+        
+        .stat-value {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .bio-container {
+                flex-direction: column;
+            }
+            .bio-img-wrapper::before {
+                display: none;
+            }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(rgba(245, 242, 240, 0.9), rgba(245, 242, 240, 0.9)), url('../images/15-1024x1024.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--bg-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-dark);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+        
+        .float-whatsapp svg {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+            /* Course Name Label */
+        .course-name-label {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--mint-dark, #5BA8A3);
+            background: rgba(130,197,192,0.12);
+            border: 1px solid rgba(130,197,192,0.35);
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-nav">
+            <a href="../index.html" class="back-home">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                Voltar
+            </a>
+            <a href="../index.html" class="logo">Iasmyn Montenegro</a>
+            <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." target="_blank" class="btn-outline-light">Dúvidas?</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <p class="course-name-label">Masterclass Bolo Floral</p>
+            <h1>Bolo Floral</h1>
+            <h2>Transforme o bolo floral em uma oportunidade de encantar e lucrar com todos os eventos da sua região. Aprenda o passo a passo, da massa à decoração, de um dos bolos mais versáteis e vendáveis do meu ateliê.</h2>
+            <a href="#pricing" class="btn-primary">Quero Garantir Minha Vaga</a>
+        </div>
+    </section>
+
+    <!-- O Que Você Vai Aprender -->
+    <section class="learn-section">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Aprender</h2>
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <h3>Massa Perfeita</h3>
+                    <p>Aprenda a deliciosa e estruturada Massa de Limão Siciliano.</p>
+                </div>
+                <div class="learn-card">
+                    <h3>Recheio</h3>
+                    <p>O cobiçado Recheio de Frutas Vermelhas, equilibrado e irresistível.</p>
+                </div>
+                <div class="learn-card">
+                    <h3>Estruturação</h3>
+                    <p>Técnicas seguras de montagem, estruturação e blindagem impecável.</p>
+                </div>
+                <div class="learn-card">
+                    <h3>Decoração</h3>
+                    <p>Modelagem delicada e realista de Rosas em Açúcar.</p>
+                </div>
+                <div class="learn-card bonus-card">
+                    <span class="bonus-badge">Bônus Exclusivo</span>
+                    <h3>Pintura Floral</h3>
+                    <p>Aula completa de pintura floral para dar um toque artístico e único aos seus bolos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Resultados que Você Vai Alcançar</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="../images/15-1024x1024.png" alt="Bolo Floral" class="gallery-img"></div>
+                <div class="gallery-item"><img src="../images/14-1024x1024.png" alt="Detalhe Floral" class="gallery-img"></div>
+                <div class="gallery-item"><img src="../images/12-1024x1024.png" alt="Bolo Decorado" class="gallery-img"></div>
+                <div class="gallery-item"><img src="../images/13-1024x1024.png" alt="Rosa de Açúcar" class="gallery-img"></div>
+                <div class="gallery-item"><img src="../images/11-1024x1024.png" alt="Pintura Floral" class="gallery-img"></div>
+                <div class="gallery-item"><img src="../images/10-1024x1024.png" alt="Bolo Finalizado" class="gallery-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Escolha Seu Plano</h2>
+            <div class="pricing-grid">
+                
+                <!-- Oferta Básica -->
+                <div class="pricing-card">
+                    <h3 class="plan-name">Oferta Básica</h3>
+                    <div class="price-old">De R$ 97,00</div>
+                    <div class="price">R$ 37<span>,00</span></div>
+                    
+                    <ul class="plan-features">
+                        <li>Massa de Limão Siciliano</li>
+                        <li>Recheio de Frutas Vermelhas</li>
+                        <li>Montagem e Blindagem</li>
+                        <li>Rosas em Açúcar</li>
+                        <li>Bônus: Pintura Floral</li>
+                        <li><strong>12 Meses de Acesso</strong></li>
+                    </ul>
+                    
+                    <a href="https://pay.hotmart.com/B95749786P?off=25tz9xv2&checkoutMode=10" class="btn-primary btn-block btn-secondary">Comprar Oferta Básica</a>
+                </div>
+
+                <!-- Combo Premium -->
+                <div class="pricing-card premium">
+                    <span class="popular-badge">Mais Vantajoso</span>
+                    <h3 class="plan-name">Combo Premium</h3>
+                    <div class="price-old">De R$ 187,00</div>
+                    <div class="price">R$ 67<span>,00</span></div>
+                    
+                    <ul class="plan-features">
+                        <li><strong>Tudo da Oferta Básica</strong></li>
+                        <li><strong>+ Minicurso Bem-casados</strong></li>
+                        <li>Certificado de Conclusão</li>
+                        <li><strong>Acesso Vitalício</strong> (Para Sempre)</li>
+                    </ul>
+                    
+                    <a href="https://pay.hotmart.com/B95749786P?off=usygwswd&checkoutMode=10" class="btn-primary btn-block">Garantir Combo Premium</a>
+                </div>
+
+            </div>
+
+            <div class="payment-methods">
+                <p style="margin-bottom: 10px; color: #777; font-size: 0.9rem;">Pagamento 100% seguro via Hotmart</p>
+                <img src="../images/metodos-pagamento.png.png" alt="Métodos de Pagamento: Cartão, Pix, Boleto">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4 class="faq-question">Como acesso o curso?</h4>
+                    <div class="faq-answer">O acesso é enviado para o seu e-mail cadastrado através da plataforma Hotmart assim que o pagamento for confirmado.</div>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Por quanto tempo terei acesso?</h4>
+                    <div class="faq-answer">Se você escolher a Oferta Básica, terá 1 ano de acesso. Optando pelo Combo Premium, seu acesso será vitalício!</div>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Preciso ter experiência prévia?</h4>
+                    <div class="faq-answer">Não! A Masterclass foi desenvolvida com um passo a passo detalhado, ideal tanto para iniciantes quanto para confeiteiras que buscam aperfeiçoar suas técnicas.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio -->
+    <section class="bio-section">
+        <div class="container bio-container">
+            <div class="bio-img-wrapper">
+                <img src="../images/ONO_9576-1024x683.jpg" alt="Iasmyn Montenegro" class="bio-img">
+            </div>
+            <div class="bio-content">
+                <h2>Muito prazer, Iasmyn Montenegro</h2>
+                <p>Com 16 anos de experiência no mercado de eventos, sou formada em Gastronomia e atuo em João Pessoa-PB. Ao longo da minha trajetória, desenvolvi técnicas que unem sabor excepcional e estética impecável.</p>
+                <p>Minha missão é encurtar o seu caminho rumo ao sucesso na confeitaria, compartilhando métodos testados e aprovados no meu próprio ateliê. Junte-se a uma comunidade de confeiteiras de sucesso!</p>
+                
+                <div class="bio-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">16+</div>
+                        <div>Anos de Experiência</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">2.000+</div>
+                        <div>Alunas Transformadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pronta para encantar seus clientes?</h2>
+            <p style="margin-bottom: 40px; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Não perca a oportunidade de aprender um dos bolos mais lucrativos do mercado com um investimento irrisório.</p>
+            <a href="#pricing" class="btn-primary">Quero Começar Agora</a>
+            <p style="margin-top: 30px;">Ainda tem dúvidas? <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." style="color: var(--primary-dark); font-weight: 500;">Fale com o suporte no WhatsApp</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="../index.html" class="logo" style="display: block; margin-bottom: 20px; font-size: 1.5rem;">Iasmyn Montenegro</a>
+            <p>&copy; 2026 Iasmyn Montenegro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." target="_blank" class="float-whatsapp" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+    
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+</body>
+</html>

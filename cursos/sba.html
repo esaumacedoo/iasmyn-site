@@ -1,0 +1,1137 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start nos Bolos Artísticos | Iasmyn Montenegro</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        :root {
+            --mint: #82C5C0;
+            --mint-dark: #5BA8A3;
+            --rose: #D98CA0;
+            --rose-dark: #B86A82;
+            --cream: #FAF6F2;
+            --dark: #1A1410;
+            --bg-dark: #1f1d1c;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Jost', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Reusable Components */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--mint);
+            color: var(--dark);
+            box-shadow: 0 10px 20px rgba(130, 197, 192, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--mint-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(91, 168, 163, 0.4);
+            color: white;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-rose { color: var(--rose-dark); }
+        .text-mint { color: var(--mint-dark); }
+
+        /* 1. Header */
+        header {
+            background-color: var(--dark);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--cream);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--mint);
+        }
+        
+        .header-btn {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        /* 2. Hero Section */
+        .hero {
+            background-color: var(--bg-dark, #1f1d1c);
+            color: var(--cream);
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('../images/13.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .course-name-label {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--mint);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: #ddd;
+            font-weight: 300;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            bottom: -20px;
+            left: 20px;
+            background-color: var(--mint);
+            border-radius: 20px;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        /* 3. Pain Points */
+        .pain-points {
+            background-color: var(--cream);
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .pain-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 5px solid var(--rose);
+        }
+        
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pain-icon {
+            font-size: 3rem;
+            color: var(--rose-dark);
+            margin-bottom: 20px;
+        }
+        
+        .pain-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* 4. Gallery */
+        .gallery {
+            background-color: #f4efea;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            aspect-ratio: 4/5;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 5. Pillars / Modules */
+        .pillars {
+            background-color: var(--dark);
+            color: var(--cream);
+        }
+        
+        .pillars .section-title {
+            color: var(--cream);
+        }
+        
+        .pillars .section-subtitle {
+            color: #aaa;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .pillar-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            gap: 25px;
+        }
+        
+        .pillar-number {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--mint);
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        .pillar-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--cream);
+        }
+        
+        .pillar-content p {
+            color: #ccc;
+        }
+
+        /* 6. For Whom */
+        .for-whom {
+            background-color: var(--cream);
+        }
+        
+        .whom-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .whom-card {
+            text-align: center;
+        }
+        
+        .whom-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .whom-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .whom-card h4 {
+            font-size: 1.4rem;
+            color: var(--dark);
+        }
+
+        /* 7. Curriculum */
+        .curriculum {
+            background-color: #fff;
+        }
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+        
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            background: #fdfbf9;
+            border: none;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .accordion-header:hover {
+            background: #f4efea;
+        }
+        
+        .accordion-header.active {
+            background: var(--mint);
+            color: var(--dark);
+        }
+        
+        .accordion-header i {
+            transition: var(--transition);
+        }
+        
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: white;
+        }
+        
+        .accordion-content ul {
+            padding: 20px 20px 20px 40px;
+            list-style: none;
+        }
+        
+        .accordion-content li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .accordion-content li::before {
+            content: '✓';
+            position: absolute;
+            left: -25px;
+            color: var(--rose-dark);
+            font-weight: bold;
+        }
+
+        /* 8. Cashback */
+        .cashback {
+            background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+            color: var(--dark);
+            text-align: center;
+        }
+        
+        .cashback-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.9);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .cashback-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cashback-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* 9. Pricing */
+        .pricing {
+            background-color: var(--dark);
+            color: var(--cream);
+            text-align: center;
+        }
+        
+        .pricing-box {
+            background: white;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .pricing-box::before {
+            content: 'OFERTA ESPECIAL';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rose);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        
+        .price-old {
+            font-size: 1.5rem;
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+        
+        .price-new {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--mint-dark);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .price-new span {
+            font-size: 2rem;
+            vertical-align: super;
+        }
+        
+        .price-sub {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        
+        .pricing .btn {
+            width: 100%;
+            font-size: 1.3rem;
+            padding: 20px;
+        }
+
+        /* 10. Guarantee & Payment */
+        .guarantee-payment {
+            background-color: var(--cream);
+            padding: 60px 0;
+        }
+        
+        .gp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .gp-item {
+            text-align: center;
+        }
+        
+        .gp-item img {
+            height: 80px;
+            margin: 0 auto 15px;
+            object-fit: contain;
+        }
+        
+        .gp-item p {
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* 11. Instructor */
+        .instructor {
+            background-color: #fff;
+        }
+        
+        .instructor-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .instructor-img {
+            flex: 1;
+        }
+        
+        .instructor-img img {
+            border-radius: 30px;
+            box-shadow: 20px 20px 0 var(--rose);
+        }
+        
+        .instructor-text {
+            flex: 1;
+        }
+        
+        .instructor-text h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .instructor-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* 12. Support */
+        .support {
+            background-color: #f4efea;
+            text-align: center;
+        }
+        
+        .support-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .support-box i {
+            font-size: 4rem;
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+        
+        .support-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* 13. Footer */
+        footer {
+            background-color: var(--dark);
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 14. Floating WA */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .floating-wa:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content, .instructor-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .whom-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pain-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .whom-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <header>
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <img src="../png logo/PNG/1.png" alt="Iasmyn Montenegro">
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html">Início</a>
+                <a href="#curso">O Curso</a>
+                <a href="#modulos">Módulos</a>
+                <a href="#garantia">Garantia</a>
+                <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." target="_blank" class="btn btn-whatsapp header-btn">
+                    <i class="fab fa-whatsapp"></i> Tirar Dúvidas
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <img src="../images/Logo-SBA-2.png" alt="Start nos Bolos Artísticos" style="max-width: 300px; margin-bottom: 30px;">
+                <div class="course-name-label">Start nos Bolos Artísticos</div>
+                <h1>Produza seus primeiros bolos artísticos e feche encomendas diretamente da sua cozinha!</h1>
+                <p>Aprenda o método simples e prático de fazer e vender bolos artísticos profissionais, mesmo que você nunca tenha trabalhado com pasta americana antes.</p>
+                <a href="https://pay.hotmart.com/G97807606N?off=cl2rhfqv&checkoutMode=10" class="btn btn-primary">
+                    Garantir Minha Vaga <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="../images/IM-Capas-1080px-3.png" alt="Start nos Bolos Artísticos">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pain Points -->
+    <section class="pain-points" id="curso">
+        <div class="container">
+            <h2 class="section-title">Isso parece familiar para você?</h2>
+            <p class="section-subtitle">Muitas confeiteiras iniciantes esbarram nesses mesmos obstáculos. Mas não precisa ser assim.</p>
+            
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <i class="fas fa-droplet pain-icon"></i>
+                    <h3>Pasta Americana Úmida</h3>
+                    <p>Sua pasta americana transpira, fica pegajosa ou derrete, estragando todo o acabamento do bolo e gerando frustração.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-cube pain-icon"></i>
+                    <h3>Quinas Imperfeitas</h3>
+                    <p>Dificuldade em conseguir aquelas quinas perfeitas, deixando o bolo com aspecto amador e torto.</p>
+                </div>
+                <div class="pain-card">
+                    <i class="fas fa-paint-brush pain-icon"></i>
+                    <h3>Decorações Limitadas</h3>
+                    <p>Falta de técnica para criar modelagens, texturas e flores, perdendo clientes que buscam designs exclusivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">O que você será capaz de <span class="text-mint">produzir</span></h2>
+            <p class="section-subtitle">Resultados reais aplicando o método Start nos Bolos Artísticos.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="../images/13.png" alt="Bolo 1"></div>
+                <div class="gallery-item"><img src="../images/14.png" alt="Bolo 2"></div>
+                <div class="gallery-item"><img src="../images/22.png" alt="Bolo 3"></div>
+                <div class="gallery-item"><img src="../images/15.png" alt="Bolo 4"></div>
+                <div class="gallery-item"><img src="../images/18.png" alt="Bolo 5"></div>
+                <div class="gallery-item"><img src="../images/16.png" alt="Bolo 6"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://pay.hotmart.com/G97807606N?off=cl2rhfqv&checkoutMode=10" class="btn btn-primary">
+                    Quero Fazer Bolos Assim
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Pillars -->
+    <section class="pillars">
+        <div class="container">
+            <h2 class="section-title">Os 4 Pilares do Método</h2>
+            <p class="section-subtitle">Um passo a passo estruturado para o seu sucesso na confeitaria artística.</p>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-number">01</div>
+                    <div class="pillar-content">
+                        <h3>Massas e Recheios Ideais</h3>
+                        <p>Aprenda a preparação correta, com o ponto perfeito e estrutura necessária para suportar a pasta americana sem ceder.</p>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">02</div>
+                    <div class="pillar-content">
+                        <h3>Preparação e Estruturação</h3>
+                        <p>Domine a montagem, prensagem adequada e blindagem perfeita para garantir que seu bolo fique reto e seguro.</p>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">03</div>
+                    <div class="pillar-content">
+                        <h3>Domínio da Pasta Americana</h3>
+                        <p>Técnicas exclusivas para preparar, tingir e aplicar a pasta sem rachaduras ou umidade, com acabamento impecável.</p>
+                    </div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">04</div>
+                    <div class="pillar-content">
+                        <h3>Técnicas de Decoração</h3>
+                        <p>Crie modelagens encantadoras, flores de açúcar e texturas que valorizam o seu trabalho e aumentam seu lucro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. For Whom -->
+    <section class="for-whom">
+        <div class="container">
+            <h2 class="section-title">Para quem é o <span class="text-rose">SBA</span>?</h2>
+            
+            <div class="whom-grid" style="margin-top: 50px;">
+                <div class="whom-card">
+                    <div class="whom-img"><img src="../images/Logo-SBA-3.png" alt="Iniciantes"></div>
+                    <h4>Iniciantes Absolutas</h4>
+                    <p>Nunca fez um bolo na vida mas sonha em entrar para a confeitaria artística.</p>
+                </div>
+                <div class="whom-card">
+                    <div class="whom-img"><img src="../images/Logo-SBA-4.png" alt="Confeiteiras"></div>
+                    <h4>Confeiteiras</h4>
+                    <p>Já trabalham com chantilly ou buttercream e querem expandir o cardápio.</p>
+                </div>
+                <div class="whom-card">
+                    <div class="whom-img"><img src="../images/Logo-SBA-5.png" alt="Frustradas"></div>
+                    <h4>Insatisfeitas</h4>
+                    <p>Já tentaram fazer bolos de pasta americana, mas não tiveram bons resultados.</p>
+                </div>
+                <div class="whom-card">
+                    <div class="whom-img"><img src="../images/IM-Capas-1080px.png" alt="Empreendedoras"></div>
+                    <h4>Empreendedoras</h4>
+                    <p>Desejam lotar a agenda e fechar encomendas altamente lucrativas em casa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Curriculum -->
+    <section class="curriculum" id="modulos">
+        <div class="container">
+            <h2 class="section-title">O que você vai aprender</h2>
+            <p class="section-subtitle">Currículo completo, direto ao ponto e 100% prático.</p>
+            
+            <div class="accordion">
+                <!-- Module 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Massas e Recheios
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Massa de Baunilha</li>
+                            <li>Massa de Chocolate</li>
+                            <li>Armazenamento de massas</li>
+                            <li>Ponto perfeito das massas</li>
+                            <li>Recheio de Ninho</li>
+                            <li>Recheio de Chocolate Gourmet</li>
+                            <li>Armazenamento de recheios</li>
+                            <li>Calda</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Preparação do Bolo
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Montagem bolo redondo</li>
+                            <li>Preparação do ganache</li>
+                            <li>Ganacheamento à mão livre</li>
+                            <li>Armazenamento e congelamento</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Dominando a Pasta Americana
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Conhecendo a pasta americana</li>
+                            <li>Colorindo a pasta americana</li>
+                            <li>Cobertura [Método Direto]</li>
+                            <li>Cobertura [Método Envelopado]</li>
+                            <li>Resolvendo eventuais problemas</li>
+                            <li>Bolo fake</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Decorações Exclusivas
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Bolo com Laço para Batizado</li>
+                            <li>Bolo Jardim das Borboletas</li>
+                            <li>Bolo Moderno</li>
+                            <li>Bolo Fundo do Mar</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Module 5 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Precificação e Vendas
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Método I.M. de precificação</li>
+                            <li>Como começar a divulgar</li>
+                            <li>Fechando as primeiras encomendas</li>
+                            <li>Fidelizando clientes</li>
+                            <li>Planejando e organizando a produção</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bônus -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Bônus Especiais
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Apostila SBA</li>
+                            <li>Checklist de utensílios</li>
+                            <li>Marcas recomendadas</li>
+                            <li>Planilha de precificação</li>
+                            <li>Plano Start</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Cashback -->
+    <section class="cashback">
+        <div class="container">
+            <div class="cashback-content">
+                <i class="fas fa-wallet" style="font-size: 3rem; color: var(--rose); margin-bottom: 20px;"></i>
+                <h2>Bônus de Aceleração</h2>
+                <p>Ao se inscrever no Start nos Bolos Artísticos hoje, você ganha <strong>100% do valor</strong> em desconto para ingressar no <strong>DPA (Dominando a Pasta Americana)</strong> futuramente!</p>
+                <a href="https://pay.hotmart.com/G97807606N?off=cl2rhfqv&checkoutMode=10" class="btn btn-primary">Aproveitar Benefício</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Pricing -->
+    <section class="pricing" id="oferta">
+        <div class="container">
+            <h2 class="section-title">Sua jornada começa aqui</h2>
+            <p class="section-subtitle" style="color: #ccc;">Acesso imediato a todas as aulas, bônus e suporte.</p>
+            
+            <div class="pricing-box">
+                <p class="price-old">De R$ 397,00 por apenas</p>
+                <div class="price-new"><span>12x R$</span> 20,86</div>
+                <p class="price-sub">ou R$ 197,00 à vista</p>
+                
+                <ul style="list-style: none; text-align: left; margin: 30px 0; padding: 0;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check text-mint" style="margin-right: 10px;"></i> Acesso ao método completo (5 Módulos)</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check text-mint" style="margin-right: 10px;"></i> Todos os Bônus Exclusivos</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check text-mint" style="margin-right: 10px;"></i> Cashback integral para o DPA</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check text-mint" style="margin-right: 10px;"></i> Suporte tira-dúvidas</li>
+                </ul>
+                
+                <a href="https://pay.hotmart.com/G97807606N?off=cl2rhfqv&checkoutMode=10" class="btn btn-primary">
+                    Comprar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Guarantee & Payment -->
+    <section class="guarantee-payment" id="garantia">
+        <div class="container">
+            <div class="gp-container">
+                <div class="gp-item">
+                    <img src="../images/Garantia-de-7-dias.png" alt="Garantia de 7 Dias">
+                    <p>Garantia incondicional de 7 dias</p>
+                </div>
+                <div class="gp-item">
+                    <img src="../images/metodos-pagamento.png.png" alt="Métodos de Pagamento">
+                    <p>Ambiente de pagamento 100% seguro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Instructor -->
+    <section class="instructor">
+        <div class="container instructor-content">
+            <div class="instructor-img">
+                <img src="../images/IM-Capas-1080px-2.png" alt="Iasmyn Montenegro">
+            </div>
+            <div class="instructor-text">
+                <h3 class="text-rose" style="font-family: var(--font-body); text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; margin-bottom: 10px;">Sua Professora</h3>
+                <h2>Iasmyn Montenegro</h2>
+                <p>Com mais de <strong>16 anos de experiência</strong> na confeitaria, sou formada em Gastronomia e atuo em João Pessoa-PB.</p>
+                <p>Já ajudei mais de <strong>2000 alunas</strong> a transformarem suas vidas através da confeitaria artística, ensinando técnicas descomplicadas e métodos reais de vendas.</p>
+                <p>Minha missão é mostrar que você também pode produzir bolos artísticos impecáveis diretamente da sua cozinha e viver da confeitaria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Support CTA -->
+    <section class="support">
+        <div class="container">
+            <div class="support-box">
+                <i class="fab fa-whatsapp"></i>
+                <h2>Ainda tem dúvidas?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px; color: #555;">Nossa equipe está pronta para te atender e esclarecer qualquer questionamento sobre o Start nos Bolos Artísticos.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." target="_blank" class="btn btn-whatsapp">
+                    Falar com o Suporte
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Footer -->
+    <footer>
+        <div class="container">
+            <img src="../png logo/PNG/1.png" alt="Iasmyn Montenegro" style="height: 50px; filter: brightness(0) invert(1); margin: 0 auto 20px;">
+            <p>&copy; 2026 Iasmyn Montenegro. Todos os direitos reservados.</p>
+            <p style="font-size: 0.9rem;">Start nos Bolos Artísticos</p>
+        </div>
+    </footer>
+
+    <!-- 14. Floating WA -->
+    <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+um+d%C3%BAvida+sobre+o+curso...." target="_blank" class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <script>
+        // Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                
+                button.classList.toggle('active');
+                
+                if (button.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                } else {
+                    accordionContent.style.maxHeight = 0;
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
