@@ -1,13 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iasmyn Montenegro | Cursos de Confeitaria Artística</title>
-  <meta name="description" content="Aprenda confeitaria artística com Iasmyn Montenegro — 16 anos de experiência, formada em Gastronomia. Mais de 2.000 alunas transformadas. Cursos de pasta americana, bolos, doces e muito mais." />
+  <meta name="description"
+    content="Aprenda confeitaria artística com Iasmyn Montenegro — 16 anos de experiência, formada em Gastronomia. Mais de 2.000 alunas transformadas. Cursos de pasta americana, bolos, doces e muito mais." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* ===== HOMEPAGE-SPECIFIC ===== */
@@ -24,15 +28,18 @@
       overflow: hidden;
       background: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 50%, #EDE3D9 100%);
     }
+
     .hero__left {
       padding: 80px 60px 80px 0;
       padding-left: max(24px, calc((100vw - 1160px) / 2 + 24px));
     }
+
     .hero__right {
       height: 100%;
       min-height: 100vh;
       position: relative;
     }
+
     .hero__photo {
       width: 100%;
       height: 100%;
@@ -41,20 +48,29 @@
       display: block;
       opacity: 1;
     }
+
     .hero__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, var(--cream) 0%, rgba(250,246,242,0.2) 50%, transparent 100%);
+      background: linear-gradient(90deg, var(--cream) 0%, rgba(250, 246, 242, 0.2) 50%, transparent 100%);
     }
+
     .hero__glow {
       position: absolute;
-      top: 20%; left: 0;
-      width: 500px; height: 500px;
+      top: 20%;
+      left: 0;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(130,197,192,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(130, 197, 192, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero__content { position: relative; z-index: 1; }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero__tag {
       display: inline-flex;
       align-items: center;
@@ -64,12 +80,13 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--mint-dark);
-      background: rgba(130,197,192,0.12);
-      border: 1px solid rgba(130,197,192,0.3);
+      background: rgba(130, 197, 192, 0.12);
+      border: 1px solid rgba(130, 197, 192, 0.3);
       padding: 6px 16px;
       border-radius: var(--r-full);
       margin-bottom: 24px;
     }
+
     .hero__title {
       font-family: var(--font-serif);
       font-size: clamp(2.8rem, 5vw, 4.4rem);
@@ -78,7 +95,13 @@
       line-height: 1.08;
       margin-bottom: 20px;
     }
-    .hero__title em { display: block; font-style: italic; color: var(--rose-dark); }
+
+    .hero__title em {
+      display: block;
+      font-style: italic;
+      color: var(--rose-dark);
+    }
+
     .hero__sub {
       font-size: 1rem;
       color: var(--brown);
@@ -86,7 +109,318 @@
       max-width: 460px;
       margin-bottom: 40px;
     }
-    .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+
+    .hero__ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    /* HERO SELECTOR - QUICK CHOICES */
+    .hero__selector {
+      margin-bottom: 36px;
+      max-width: 530px;
+    }
+
+    .hero__selector-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-bottom: 12px;
+    }
+
+    .hero__selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .hero__option-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(220, 206, 196, 0.85);
+      border-radius: var(--r-md);
+      box-shadow: 0 2px 8px rgba(90, 60, 40, 0.05);
+      transition: all var(--t);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+
+    .hero__option-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--mint);
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+
+    .hero__option-card:hover {
+      transform: translateY(-2px);
+      background: var(--white);
+      border-color: var(--mint-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero__option-card:hover::before {
+      opacity: 1;
+    }
+
+    .hero__option-card--cursos {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(243, 237, 231, 0.92));
+      border-color: rgba(130, 197, 192, 0.5);
+    }
+
+    .hero__option-card--cursos::before {
+      opacity: 1;
+      background: var(--mint-dark);
+    }
+
+    .hero__option-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      background: var(--cream);
+      transition: transform var(--t);
+    }
+
+    .hero__option-card:hover .hero__option-icon {
+      transform: scale(1.12);
+    }
+
+    .hero__option-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero__option-info strong {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hero__option-info small {
+      display: block;
+      font-size: 0.70rem;
+      color: var(--brown-light);
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+
+    .hero__option-arrow {
+      color: var(--mint-dark);
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform var(--t);
+    }
+
+    .hero__option-card:hover .hero__option-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    /* ===== SEÇÃO HUB DE ESCOLHA / PORTAL ===== */
+    .hub-seletor {
+      padding: var(--section-py-sm) 0;
+      background: linear-gradient(180deg, #F3EDE7 0%, var(--cream) 100%);
+      border-top: 1px solid var(--cream-3);
+      border-bottom: 1px solid var(--cream-3);
+      position: relative;
+    }
+
+    .hub-seletor__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .hub-card {
+      background: var(--white);
+      border: 1px solid var(--cream-3);
+      border-radius: var(--r-xl);
+      padding: 30px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all var(--t);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hub-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--mint-light);
+    }
+
+    .hub-card__badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--r-full);
+      background: rgba(130, 197, 192, 0.15);
+      color: var(--mint-dark);
+      border: 1px solid rgba(130, 197, 192, 0.3);
+    }
+
+    .hub-card__badge--rose {
+      background: rgba(217, 140, 160, 0.15);
+      color: var(--rose-dark);
+      border-color: rgba(217, 140, 160, 0.3);
+    }
+
+    .hub-card__badge--gold {
+      background: rgba(201, 169, 110, 0.15);
+      color: #9E7938;
+      border-color: rgba(201, 169, 110, 0.3);
+    }
+
+    .hub-card__badge--mint {
+      background: rgba(130, 197, 192, 0.15);
+      color: var(--mint-dark);
+      border-color: rgba(130, 197, 192, 0.3);
+    }
+
+    .hub-card__icon-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--r-lg);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 100%);
+      border: 1px solid var(--cream-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 18px;
+      transition: transform var(--t);
+    }
+
+    .hub-card:hover .hub-card__icon-wrap {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .hub-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hub-card__desc {
+      font-size: 0.88rem;
+      color: var(--brown);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .hub-card__features {
+      margin-bottom: 22px;
+      padding-top: 14px;
+      border-top: 1px solid var(--cream-2);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .hub-card__features li {
+      font-size: 0.80rem;
+      color: var(--brown-light);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      line-height: 1.4;
+    }
+
+    .chk-mini {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border-radius: 50%;
+      background: rgba(130, 197, 192, 0.2);
+      color: var(--mint-dark);
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .hub-card__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: var(--r-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: var(--t);
+      margin-top: auto;
+      text-decoration: none;
+    }
+
+    .hub-card__btn--primary {
+      background: linear-gradient(135deg, var(--mint), var(--mint-dark));
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(91, 168, 163, 0.35);
+    }
+
+    .hub-card:hover .hub-card__btn--primary {
+      box-shadow: 0 6px 20px rgba(91, 168, 163, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .hub-card__btn--wa {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .hub-card:hover .hub-card__btn--wa {
+      background: #20BA5A;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      transform: translateY(-2px);
+    }
+
+
     .hero__stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -98,11 +432,13 @@
       max-width: 400px;
       box-shadow: var(--shadow-sm);
     }
+
     .hero__stat {
       padding: 20px;
       background: var(--white);
       text-align: center;
     }
+
     .hero__stat-n {
       display: block;
       font-family: var(--font-serif);
@@ -111,6 +447,7 @@
       color: var(--dark);
       line-height: 1;
     }
+
     .hero__stat-l {
       font-size: 0.68rem;
       letter-spacing: 0.1em;
@@ -120,17 +457,27 @@
     }
 
     /* TICKER */
-    .ticker { margin: 0; }
+    .ticker {
+      margin: 0;
+    }
 
     /* SOBRE */
-    .sobre { padding: var(--section-py) 0; background: var(--cream); }
+    .sobre {
+      padding: var(--section-py) 0;
+      background: var(--cream);
+    }
+
     .sobre__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
     }
-    .sobre__img-block { position: relative; }
+
+    .sobre__img-block {
+      position: relative;
+    }
+
     .sobre__img-outer {
       background: linear-gradient(135deg, var(--cream-2) 0%, var(--cream-3) 100%);
       border-radius: var(--r-2xl);
@@ -138,7 +485,13 @@
       box-shadow: var(--shadow-lg);
       border: 1px solid var(--cream-3);
     }
-    .sobre__logo { width: 100%; max-width: 300px; margin: 0 auto; }
+
+    .sobre__logo {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
     .sobre__badge-wrap {
       position: absolute;
       bottom: -16px;
@@ -147,6 +500,7 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .sobre__mini-badge {
       background: var(--white);
       border: 1px solid var(--cream-3);
@@ -158,22 +512,54 @@
       gap: 10px;
       min-width: 180px;
     }
-    .sobre__mini-badge .icon { font-size: 1.4rem; }
-    .sobre__mini-badge strong { display: block; font-size: 0.85rem; color: var(--dark); line-height: 1.2; }
-    .sobre__mini-badge span { font-size: 0.72rem; color: var(--brown-light); }
+
+    .sobre__mini-badge .icon {
+      font-size: 1.4rem;
+    }
+
+    .sobre__mini-badge strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .sobre__mini-badge span {
+      font-size: 0.72rem;
+      color: var(--brown-light);
+    }
+
     .sobre__bg-accent {
       position: absolute;
       inset: -24px;
       background:
-        radial-gradient(circle at 20% 20%, rgba(130,197,192,0.1) 0%, transparent 60%),
-        radial-gradient(circle at 80% 80%, rgba(217,140,160,0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 20%, rgba(130, 197, 192, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(217, 140, 160, 0.08) 0%, transparent 50%);
       border-radius: var(--r-2xl);
       z-index: -1;
     }
-    .sobre__text p { font-size: 1rem; color: var(--brown); line-height: 1.85; margin-bottom: 16px; }
-    .sobre__text strong { color: var(--dark); font-weight: 600; }
-    .sobre__text em { color: var(--rose-dark); font-style: italic; }
-    .sobre__checks { margin: 28px 0 36px; }
+
+    .sobre__text p {
+      font-size: 1rem;
+      color: var(--brown);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .sobre__text strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .sobre__text em {
+      color: var(--rose-dark);
+      font-style: italic;
+    }
+
+    .sobre__checks {
+      margin: 28px 0 36px;
+    }
+
     .sobre__checks li {
       display: flex;
       align-items: center;
@@ -183,9 +569,15 @@
       padding: 8px 0;
       border-bottom: 1px solid var(--cream-3);
     }
-    .sobre__checks li:last-child { border-bottom: none; }
+
+    .sobre__checks li:last-child {
+      border-bottom: none;
+    }
+
     .chk-icon {
-      width: 22px; height: 22px; min-width: 22px;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--mint), var(--mint-dark));
       display: inline-flex;
@@ -197,12 +589,17 @@
     }
 
     /* CURSOS */
-    .cursos { padding: var(--section-py) 0; background: var(--white); }
+    .cursos {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
     .cursos__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .curso-hub-card {
       border-radius: var(--r-xl);
       overflow: hidden;
@@ -213,17 +610,20 @@
       cursor: pointer;
       group: true;
     }
+
     .curso-hub-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(14,11,8,0.92) 0%, rgba(14,11,8,0.4) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(14, 11, 8, 0.92) 0%, rgba(14, 11, 8, 0.4) 50%, transparent 100%);
       z-index: 1;
       transition: var(--t);
     }
+
     .curso-hub-card:hover::before {
-      background: linear-gradient(to top, rgba(14,11,8,0.96) 0%, rgba(14,11,8,0.6) 60%, rgba(14,11,8,0.1) 100%);
+      background: linear-gradient(to top, rgba(14, 11, 8, 0.96) 0%, rgba(14, 11, 8, 0.6) 60%, rgba(14, 11, 8, 0.1) 100%);
     }
+
     .curso-hub-card__img {
       position: absolute;
       inset: 0;
@@ -232,7 +632,11 @@
       object-fit: cover;
       transition: transform 0.6s ease;
     }
-    .curso-hub-card:hover .curso-hub-card__img { transform: scale(1.05); }
+
+    .curso-hub-card:hover .curso-hub-card__img {
+      transform: scale(1.05);
+    }
+
     .curso-hub-card__content {
       position: absolute;
       inset: 0;
@@ -242,6 +646,7 @@
       justify-content: flex-end;
       padding: 28px;
     }
+
     .curso-hub-card__logo {
       max-width: 120px;
       max-height: 80px;
@@ -250,6 +655,7 @@
       filter: brightness(0) invert(1);
       opacity: 0.9;
     }
+
     .curso-hub-card__type {
       font-size: 0.68rem;
       font-weight: 600;
@@ -258,6 +664,7 @@
       color: var(--mint);
       margin-bottom: 6px;
     }
+
     .curso-hub-card__title {
       font-family: var(--font-serif);
       font-size: 1.4rem;
@@ -266,19 +673,22 @@
       line-height: 1.2;
       margin-bottom: 8px;
     }
+
     .curso-hub-card__desc {
       font-size: 0.82rem;
-      color: rgba(250,246,242,0.6);
+      color: rgba(250, 246, 242, 0.6);
       line-height: 1.6;
       margin-bottom: 16px;
       opacity: 0;
       transform: translateY(8px);
       transition: var(--t-slow);
     }
+
     .curso-hub-card:hover .curso-hub-card__desc {
       opacity: 1;
       transform: translateY(0);
     }
+
     .curso-hub-card__cta {
       display: inline-flex;
       align-items: center;
@@ -290,14 +700,18 @@
       color: var(--rose-light);
       transition: gap var(--t);
     }
-    .curso-hub-card:hover .curso-hub-card__cta { gap: 10px; }
+
+    .curso-hub-card:hover .curso-hub-card__cta {
+      gap: 10px;
+    }
+
     .curso-hub-card__price {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: rgba(14,11,8,0.7);
+      background: rgba(14, 11, 8, 0.7);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--r-full);
       padding: 6px 14px;
       font-size: 0.8rem;
@@ -305,6 +719,7 @@
       color: var(--cream);
       z-index: 3;
     }
+
     /* Featured (first card — wider) */
     .curso-hub-card--featured {
       grid-column: 1 / 3;
@@ -312,12 +727,17 @@
     }
 
     /* GARANTIAS */
-    .garantias { padding: 60px 0; background: var(--cream-2); }
+    .garantias {
+      padding: 60px 0;
+      background: var(--cream-2);
+    }
+
     .garantias__row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
+
     .garantia-item {
       display: flex;
       align-items: center;
@@ -328,13 +748,36 @@
       border-radius: var(--r-lg);
       transition: var(--t);
     }
-    .garantia-item:hover { border-color: var(--mint); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
-    .garantia-item .g-ico { font-size: 1.8rem; flex-shrink: 0; }
-    .garantia-item strong { display: block; font-size: 0.88rem; font-weight: 600; color: var(--dark); }
-    .garantia-item span { font-size: 0.77rem; color: var(--brown-light); }
+
+    .garantia-item:hover {
+      border-color: var(--mint);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .garantia-item .g-ico {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .garantia-item strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .garantia-item span {
+      font-size: 0.77rem;
+      color: var(--brown-light);
+    }
 
     /* SOCIAL PROOF */
-    .social-proof { padding: var(--section-py) 0; background: var(--white); }
+    .social-proof {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
     .proof-number {
       font-family: var(--font-serif);
       font-size: clamp(4rem, 8vw, 7rem);
@@ -344,14 +787,24 @@
       line-height: 0.9;
       margin-bottom: 8px;
     }
+
     .proof-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
     }
-    .proof-text h2 { margin-bottom: 16px; }
-    .proof-text p { font-size: 1rem; color: var(--brown); line-height: 1.8; margin-bottom: 24px; }
+
+    .proof-text h2 {
+      margin-bottom: 16px;
+    }
+
+    .proof-text p {
+      font-size: 1rem;
+      color: var(--brown);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
 
     /* CTA FINAL */
     .cta-final {
@@ -361,25 +814,37 @@
       overflow: hidden;
       text-align: center;
     }
+
     .cta-final__noise {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
       pointer-events: none;
     }
+
     .cta-final__glow {
       position: absolute;
-      top: -200px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(217,140,160,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(217, 140, 160, 0.1) 0%, transparent 70%);
       pointer-events: none;
     }
-    .cta-final__content { position: relative; z-index: 1; }
+
+    .cta-final__content {
+      position: relative;
+      z-index: 1;
+    }
+
     .cta-final__logo {
       width: 64px;
       margin: 0 auto 20px;
       filter: brightness(0) invert(1) opacity(0.6);
     }
+
     .cta-final__title {
       font-family: var(--font-serif);
       font-size: clamp(2.2rem, 4vw, 3.4rem);
@@ -387,36 +852,103 @@
       color: var(--cream);
       margin-bottom: 16px;
     }
-    .cta-final__title em { font-style: italic; color: var(--rose-light); }
+
+    .cta-final__title em {
+      font-style: italic;
+      color: var(--rose-light);
+    }
+
     .cta-final__sub {
       font-size: 1rem;
-      color: rgba(250,246,242,0.55);
+      color: rgba(250, 246, 242, 0.55);
       max-width: 500px;
       margin: 0 auto 40px;
       line-height: 1.8;
     }
-    .cta-final__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .cta-final__btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
     /* RESPONSIVE HOMEPAGE */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero__right { display: none; }
-      .hero__left { padding: 140px 24px 80px; }
-      .sobre__grid { grid-template-columns: 1fr; gap: 48px; }
-      .cursos__grid { grid-template-columns: repeat(2, 1fr); }
-      .curso-hub-card--featured { grid-column: 1 / -1; }
-      .garantias__row { grid-template-columns: repeat(2, 1fr); }
-      .proof-grid { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__right {
+        display: none;
+      }
+
+      .hero__left {
+        padding: 140px 24px 80px;
+      }
+
+      .sobre__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .cursos__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .curso-hub-card--featured {
+        grid-column: 1 / -1;
+      }
+
+      .garantias__row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hub-seletor__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 768px) {
-      .hero__stats { grid-template-columns: 1fr 1fr 1fr; }
-      .cursos__grid { grid-template-columns: 1fr; }
-      .curso-hub-card { aspect-ratio: 4/3; }
-      .curso-hub-card--featured { aspect-ratio: 3/2; }
-      .garantias__row { grid-template-columns: 1fr; }
+      .hero__selector-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hub-seletor__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hub-card {
+        padding: 24px 18px;
+      }
+
+      .hero__stats {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .cursos__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .curso-hub-card {
+        aspect-ratio: 4/3;
+      }
+
+      .curso-hub-card--featured {
+        aspect-ratio: 3/2;
+      }
+
+      .garantias__row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -427,12 +959,18 @@
           <img src="png logo/PNG/1.png" alt="Iasmyn Montenegro" />
         </a>
         <ul class="nav__links">
-          <li><a href="#cursos" class="nav__link" id="nav-cursos">Cursos</a></li>
+          <li><a href="#cursos" class="nav__link" id="nav-cursos">Cursos Online</a></li>
+          <li><a
+              href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Quero+encomendar+bolos+e+doces+decorados."
+              target="_blank" rel="noopener noreferrer" class="nav__link" id="nav-encomendas">Encomendas</a></li>
+          <li><a
+              href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+mentorias+particulares."
+              target="_blank" rel="noopener noreferrer" class="nav__link" id="nav-presencial">Curso Presencial</a></li>
           <li><a href="#sobre" class="nav__link" id="nav-sobre">Sobre</a></li>
           <li>
-            <a href="https://api.whatsapp.com/send/?phone=%2B5583996020418&text=Ol%C3%A1%2C+gostaria+de+solicitar+o+menu+para+fazer+minha+matr%C3%ADcula"
-               target="_blank" class="nav__cta" id="nav-wa">
-              Fale Comigo
+            <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+              target="_blank" rel="noopener noreferrer" class="nav__cta" id="nav-wa">
+              Suporte Online
             </a>
           </li>
         </ul>
@@ -445,12 +983,16 @@
 
   <!-- MOBILE NAV -->
   <nav class="mobile-nav" id="mobile-nav">
-    <a href="#cursos" class="nav__link" id="mob-cursos">Cursos</a>
-    <a href="#sobre" class="nav__link" id="mob-sobre">Sobre</a>
-    <a href="https://www.youtube.com/@iasmynmontenegro" target="_blank" class="nav__link" id="mob-yt">YouTube</a>
-    <a href="https://api.whatsapp.com/send/?phone=%2B5583996020418&text=Ol%C3%A1%2C+gostaria+de+tirar+uma+d%C3%BAvida"
-       target="_blank" class="btn btn-primary" id="mob-wa">
-      WhatsApp
+    <a href="#cursos" class="nav__link" id="mob-cursos">🎓 Cursos Online</a>
+    <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Quero+encomendar+bolos+e+doces+decorados."
+      target="_blank" rel="noopener noreferrer" class="nav__link" id="mob-encomendas">🎂 Encomendas de Bolos</a>
+    <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+mentorias+particulares."
+      target="_blank" rel="noopener noreferrer" class="nav__link" id="mob-presencial">👩‍🍳 Curso Presencial &
+      Mentorias</a>
+    <a href="#sobre" class="nav__link" id="mob-sobre">✦ Sobre Iasmyn</a>
+    <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+      target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="mob-wa">
+      💬 Suporte - Cursos Online
     </a>
   </nav>
 
@@ -464,19 +1006,69 @@
           Transforme sua<br>paixão em<br><em>arte e lucro</em>
         </h1>
         <p class="hero__sub">
-          Aprenda pasta americana, bolos decorados e doces finos com Iasmyn Montenegro — 
+          Atelier de confeitaria artística e escola com Iasmyn Montenegro —
           16 anos de experiência, formada em Gastronomia, mais de 2.000 alunas transformadas.
         </p>
+
+        <!-- SELETOR DE ACESSO IMEDIATO NO HERO -->
+        <div class="hero__selector">
+          <div class="hero__selector-label">✦ Escolha o que você procura hoje:</div>
+          <div class="hero__selector-grid">
+            <a href="#cursos" class="hero__option-card hero__option-card--cursos" id="hero-opt-cursos">
+              <span class="hero__option-icon">🎓</span>
+              <div class="hero__option-info">
+                <strong>Cursos Online</strong>
+                <small>Aprenda no seu ritmo</small>
+              </div>
+              <span class="hero__option-arrow">↓</span>
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Quero+encomendar+bolos+e+doces+decorados."
+              target="_blank" rel="noopener noreferrer" class="hero__option-card" id="hero-opt-encomendas">
+              <span class="hero__option-icon">🎂</span>
+              <div class="hero__option-info">
+                <strong>Encomendas de Bolos</strong>
+                <small>Bolos & doces decorados</small>
+              </div>
+              <span class="hero__option-arrow">↗</span>
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+mentorias+particulares."
+              target="_blank" rel="noopener noreferrer" class="hero__option-card" id="hero-opt-presencial">
+              <span class="hero__option-icon">👩‍🍳</span>
+              <div class="hero__option-info">
+                <strong>Curso Presencial</strong>
+                <small>Mentorias particulares</small>
+              </div>
+              <span class="hero__option-arrow">↗</span>
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+              target="_blank" rel="noopener noreferrer" class="hero__option-card" id="hero-opt-suporte">
+              <span class="hero__option-icon">💬</span>
+              <div class="hero__option-info">
+                <strong>Suporte do Curso</strong>
+                <small>Tire dúvidas e matrículas</small>
+              </div>
+              <span class="hero__option-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
         <div class="hero__ctas">
-          <a href="#cursos" class="btn btn-primary btn-lg" id="hero-cursos-btn">
-            Ver os Cursos
+          <a href="#central-opcoes" class="btn btn-outline btn-lg" id="hero-opcoes-btn">
+            Conhecer Todos os Serviços ↓
           </a>
-          <a href="https://www.youtube.com/@iasmynmontenegro" target="_blank"
-             class="btn btn-outline btn-lg" id="hero-yt-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.36a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.79z"/></svg>
+          <a href="https://www.youtube.com/@iasmynmontenegro" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline btn-lg" id="hero-yt-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.36a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.79z" />
+            </svg>
             Aulas Grátis
           </a>
         </div>
+
         <div class="hero__stats">
           <div class="hero__stat">
             <span class="hero__stat-n">16+</span>
@@ -494,9 +1086,127 @@
       </div>
     </div>
     <div class="hero__right">
-      <img src="images/iasmyn-hero.jpg"
-           alt="Iasmyn Montenegro" class="hero__photo" />
+      <img src="images/iasmyn-hero.jpg" alt="Iasmyn Montenegro" class="hero__photo" />
       <div class="hero__overlay"></div>
+    </div>
+  </section>
+
+  <!-- ===== CENTRAL DE OPÇÕES / HUB DE ACESSO ===== -->
+  <section class="hub-seletor" id="central-opcoes">
+    <div class="container">
+      <div class="sec-header" data-fade>
+        <span class="label">✦ Atelier & Confeitaria Artística</span>
+        <h2 class="h2">Como podemos te ajudar <em>hoje?</em></h2>
+        <p class="body-lg">
+          Escolha uma das opções abaixo para ser direcionada imediatamente ao conteúdo ou atendimento:
+        </p>
+      </div>
+
+      <div class="hub-seletor__grid" data-stagger="70">
+
+        <!-- 1. CURSOS ONLINE -->
+        <div class="hub-card hub-card--cursos" id="card-hub-cursos">
+          <div class="hub-card__badge">100% Online</div>
+          <div class="hub-card__icon-wrap">
+            <span class="hub-card__icon">🎓</span>
+          </div>
+          <h3 class="hub-card__title">Cursos Online</h3>
+          <p class="hub-card__desc">
+            Aprenda confeitaria artística, pasta americana e doces finos sem sair de casa. Aulas práticas, passo a passo
+            e certificado.
+          </p>
+          <ul class="hub-card__features">
+            <li><span class="chk-mini">✓</span> 6 cursos do zero ao avançado</li>
+            <li><span class="chk-mini">✓</span> Acesso imediato no seu ritmo</li>
+            <li><span class="chk-mini">✓</span> Comunidade com +2.000 alunas</li>
+          </ul>
+          <a href="#cursos" class="hub-card__btn hub-card__btn--primary" id="hub-btn-cursos">
+            Ver Todos os Cursos
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 2. ENCOMENDAS DE BOLOS DECORADOS -->
+        <div class="hub-card hub-card--encomendas" id="card-hub-encomendas">
+          <div class="hub-card__badge hub-card__badge--rose">Sob Encomenda</div>
+          <div class="hub-card__icon-wrap">
+            <span class="hub-card__icon">🎂</span>
+          </div>
+          <h3 class="hub-card__title">Encomendas de Bolos</h3>
+          <p class="hub-card__desc">
+            Bolos decorados e doces finos exclusivos para aniversários, casamentos e celebrações inesquecíveis em João
+            Pessoa e região.
+          </p>
+          <ul class="hub-card__features">
+            <li><span class="chk-mini">✓</span> Design exclusivo e personalizado</li>
+            <li><span class="chk-mini">✓</span> Massas, recheios e acabamento premium</li>
+            <li><span class="chk-mini">✓</span> Atendimento personalizado via WhatsApp</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=5583996020418&text=Ol%C3%A1%21+Quero+encomendar+bolos+e+doces+decorados."
+            target="_blank" rel="noopener noreferrer" class="hub-card__btn hub-card__btn--wa" id="hub-btn-encomendas">
+            Pedir no WhatsApp
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 3. CURSO PRESENCIAL -->
+        <div class="hub-card hub-card--presencial" id="card-hub-presencial">
+          <div class="hub-card__badge hub-card__badge--gold">Mentorias VIP</div>
+          <div class="hub-card__icon-wrap">
+            <span class="hub-card__icon">👩‍🍳</span>
+          </div>
+          <h3 class="hub-card__title">Curso Presencial</h3>
+          <p class="hub-card__desc">
+            Treinamento prático direto no atelier com Iasmyn Montenegro em João Pessoa. Mentorias particulares para
+            acelerar seus resultados.
+          </p>
+          <ul class="hub-card__features">
+            <li><span class="chk-mini">✓</span> Aulas práticas presenciais</li>
+            <li><span class="chk-mini">✓</span> Correção de postura e técnica na hora</li>
+            <li><span class="chk-mini">✓</span> Conteúdo personalizado ao seu nível</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+mentorias+particulares."
+            target="_blank" rel="noopener noreferrer" class="hub-card__btn hub-card__btn--wa" id="hub-btn-presencial">
+            Consultar Mentorias
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 4. SUPORTE - CURSO ONLINE -->
+        <div class="hub-card hub-card--suporte" id="card-hub-suporte">
+          <div class="hub-card__badge hub-card__badge--mint">Atendimento</div>
+          <div class="hub-card__icon-wrap">
+            <span class="hub-card__icon">💬</span>
+          </div>
+          <h3 class="hub-card__title">Suporte - Curso Online</h3>
+          <p class="hub-card__desc">
+            Tire suas dúvidas antes de finalizar a compra, esclareça formas de pagamento ou solicite suporte para alunas
+            ativas.
+          </p>
+          <ul class="hub-card__features">
+            <li><span class="chk-mini">✓</span> Dúvidas sobre os cursos online</li>
+            <li><span class="chk-mini">✓</span> Suporte para matrícula e pagamento</li>
+            <li><span class="chk-mini">✓</span> Ajuda com acesso à plataforma</li>
+          </ul>
+          <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+            target="_blank" rel="noopener noreferrer" class="hub-card__btn hub-card__btn--wa" id="hub-btn-suporte">
+            Falar com Suporte
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -529,7 +1239,8 @@
         <div class="sobre__img-block" data-fade-left>
           <div class="sobre__bg-accent"></div>
           <div class="sobre__img-outer">
-            <img src="images/iasmyn-foto-sobre.jpg" alt="Iasmyn Montenegro" class="sobre__logo" style="border-radius: var(--r-xl); object-fit: cover; max-width: 100%; height: auto;" />
+            <img src="images/iasmyn-foto-sobre.jpg" alt="Iasmyn Montenegro" class="sobre__logo"
+              style="border-radius: var(--r-xl); object-fit: cover; max-width: 100%; height: auto;" />
           </div>
           <div class="sobre__badge-wrap">
             <div class="sobre__mini-badge">
@@ -552,13 +1263,17 @@
           <span class="label">✦ Quem é Iasmyn</span>
           <h2 class="h2" style="margin-bottom:20px;">Uma <em>artista</em> que transforma açúcar em uma profissão</h2>
           <p>
-            Uma paraibana que, há <strong>16 anos</strong>, ousou transformar sua paixão pela confeitaria artística em sua profissão. 
-            Hoje é <strong>formada em Gastronomia</strong> e vive da confeitaria com seu atelier de bolos e doces artísticos em João Pessoa – PB.
+            Uma paraibana que, há <strong>16 anos</strong>, ousou transformar sua paixão pela confeitaria artística em
+            sua profissão.
+            Hoje é <strong>formada em Gastronomia</strong> e vive da confeitaria com seu atelier de bolos e doces
+            artísticos em João Pessoa – PB.
           </p>
           <p>
-            Há 9 anos passou a treinar pessoas de forma presencial no <strong>Brasil, Paraguai e Uruguai</strong>, e desde 2020 também 
-            conta com alunas por todo o mundo através dos seus treinamentos online. 
-            Hoje já são <em>mais de 2.000 alunas</em> que passaram a ser mais valorizadas e reconhecidas por suas produções.
+            Há 9 anos passou a treinar pessoas de forma presencial no <strong>Brasil, Paraguai e Uruguai</strong>, e
+            desde 2020 também
+            conta com alunas por todo o mundo através dos seus treinamentos online.
+            Hoje já são <em>mais de 2.000 alunas</em> que passaram a ser mais valorizadas e reconhecidas por suas
+            produções.
           </p>
           <ul class="sobre__checks">
             <li><span class="chk-icon">✓</span> Formação completa em Gastronomia</li>
@@ -581,84 +1296,104 @@
       <div class="sec-header" data-fade>
         <span class="label">✦ Formação Completa</span>
         <h2 class="h2">Escolha o curso <em>certo para você</em></h2>
-        <p class="body-lg">Do iniciante ao avançado — 6 cursos para cada momento da sua jornada na confeitaria artística.</p>
+        <p class="body-lg">Do iniciante ao avançado — 6 cursos para cada momento da sua jornada na confeitaria
+          artística.</p>
       </div>
       <div class="cursos__grid" data-stagger="80">
 
         <!-- SBA — FEATURED -->
         <a href="cursos/sba.html" class="curso-hub-card curso-hub-card--featured" id="card-sba">
-          <img src="images/IM-Capas-1080px-3.png"
-               alt="Start nos Bolos Artísticos" class="curso-hub-card__img" />
+          <img src="images/IM-Capas-1080px-3.png" alt="Start nos Bolos Artísticos" class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">🏆 Mais Completo</span>
             <h3 class="curso-hub-card__title">Start nos Bolos Artísticos</h3>
-            <p class="curso-hub-card__desc">Aprenda do zero a produzir seus primeiros bolos artísticos com pasta americana. Método prático com 4 pilares: massa, estrutura, cobertura e decoração.</p>
-            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">Aprenda do zero a produzir seus primeiros bolos artísticos com pasta
+              americana. Método prático com 4 pilares: massa, estrutura, cobertura e decoração.</p>
+            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">R$ 197</span>
         </a>
 
         <!-- BOLO FLORAL -->
         <a href="cursos/bolo-floral.html" class="curso-hub-card" id="card-bolo-floral">
-          <img src="images/ONO_9576-1024x683.jpg"
-               alt="Masterclass Bolo Floral" class="curso-hub-card__img" />
+          <img src="images/ONO_9576-1024x683.jpg" alt="Masterclass Bolo Floral" class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">🌸 Masterclass</span>
             <h3 class="curso-hub-card__title">Masterclass Bolo Floral</h3>
-            <p class="curso-hub-card__desc">Massa de limão siciliano, recheio de frutas vermelhas, rosas em açúcar e bônus de pintura floral.</p>
-            <span class="curso-hub-card__cta">Ver a Masterclass <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">Massa de limão siciliano, recheio de frutas vermelhas, rosas em açúcar e
+              bônus de pintura floral.</p>
+            <span class="curso-hub-card__cta">Ver a Masterclass <svg width="14" height="14" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">R$ 37</span>
         </a>
 
         <!-- BOLO CAMPONESA -->
         <a href="cursos/bolo-camponesa.html" class="curso-hub-card" id="card-bolo-camponesa">
-          <img src="images/IM-Capas-600px-1080-x-1080-px-1024x1024.png"
-               alt="Bolo Camponesa" class="curso-hub-card__img" />
+          <img src="images/IM-Capas-600px-1080-x-1080-px-1024x1024.png" alt="Bolo Camponesa"
+            class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">🌿 Curso</span>
             <h3 class="curso-hub-card__title">Bolo Camponesa</h3>
-            <p class="curso-hub-card__desc">Camponesas 3D e 2D, cestinha esculpida, margaridas, borboletas, aplicações com glacê real. Técnicas exclusivas com +20 aulas em Full HD.</p>
-            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">Camponesas 3D e 2D, cestinha esculpida, margaridas, borboletas, aplicações
+              com glacê real. Técnicas exclusivas com +20 aulas em Full HD.</p>
+            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">R$ 57</span>
         </a>
 
         <!-- DOCE SUCESSO -->
         <a href="cursos/doce-sucesso.html" class="curso-hub-card" id="card-doce-sucesso">
-          <img src="images/11-1024x1024.png"
-               alt="Doce Sucesso" class="curso-hub-card__img" />
+          <img src="images/11-1024x1024.png" alt="Doce Sucesso" class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">🍫 Curso</span>
             <h3 class="curso-hub-card__title">Doce Sucesso</h3>
-            <p class="curso-hub-card__desc">+100 aulas práticas de doces modelados em pasta americana: trufas, biscoitos, cupcakes, pão de mel e muito mais.</p>
-            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">+100 aulas práticas de doces modelados em pasta americana: trufas,
+              biscoitos, cupcakes, pão de mel e muito mais.</p>
+            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">A partir de R$ 247</span>
         </a>
 
         <!-- FLORES EM AÇÚCAR -->
         <a href="cursos/flores-em-acucar.html" class="curso-hub-card" id="card-flores-acucar">
-          <img src="images/IMG_6585-1024x1024.jpg"
-               alt="Flores em Açúcar" class="curso-hub-card__img" />
+          <img src="images/IMG_6585-1024x1024.jpg" alt="Flores em Açúcar" class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">🌺 Curso</span>
             <h3 class="curso-hub-card__title">Flores em Açúcar</h3>
-            <p class="curso-hub-card__desc">Aprenda a criar peônias, astromélias, cosmos, hibiscos, orquídeas e mais. Triplique o valor dos seus bolos artísticos.</p>
-            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">Aprenda a criar peônias, astromélias, cosmos, hibiscos, orquídeas e mais.
+              Triplique o valor dos seus bolos artísticos.</p>
+            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">R$ 247</span>
         </a>
 
         <!-- BEM-CASADOS -->
         <a href="cursos/bem-casados.html" class="curso-hub-card" id="card-bem-casados">
-          <img src="images/17-1024x1024.png"
-               alt="Bem-Casados" class="curso-hub-card__img" />
+          <img src="images/17-1024x1024.png" alt="Bem-Casados" class="curso-hub-card__img" />
           <div class="curso-hub-card__content">
             <span class="curso-hub-card__type">💍 Curso</span>
             <h3 class="curso-hub-card__title">Bem-Casados</h3>
-            <p class="curso-hub-card__desc">Descubra o segredo para bem-casados perfeitos que serão destaque na sua região. Receitas, montagem, embalagem e precificação.</p>
-            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            <p class="curso-hub-card__desc">Descubra o segredo para bem-casados perfeitos que serão destaque na sua
+              região. Receitas, montagem, embalagem e precificação.</p>
+            <span class="curso-hub-card__cta">Ver o Curso <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg></span>
           </div>
           <span class="curso-hub-card__price">R$ 127</span>
         </a>
@@ -712,8 +1447,8 @@
           <div class="proof-number">2.000+</div>
           <h2 class="h2" style="margin-bottom:16px;">Alunas que <em>transformaram</em> suas vidas</h2>
           <p>
-            Desde 2020, Iasmyn Montenegro tem formado confeiteiras em todo o Brasil e no mundo. 
-            Alunas que saíram do zero e hoje têm seus próprios ateliês, clientes fiéis e uma renda 
+            Desde 2020, Iasmyn Montenegro tem formado confeiteiras em todo o Brasil e no mundo.
+            Alunas que saíram do zero e hoje têm seus próprios ateliês, clientes fiéis e uma renda
             que mudou a vida de toda a família.
           </p>
           <div class="pill-row" style="margin-bottom:28px;">
@@ -746,16 +1481,16 @@
       <span class="label" style="color:rgba(184,224,219,0.7); margin-bottom:12px;">✦ Comece sua jornada</span>
       <h2 class="cta-final__title">Pronta para <em>transformar</em><br>sua paixão em profissão?</h2>
       <p class="cta-final__sub">
-        Junte-se a mais de 2.000 alunas que já mudaram de vida com a confeitaria artística. 
+        Junte-se a mais de 2.000 alunas que já mudaram de vida com a confeitaria artística.
         Escolha o seu curso e comece hoje.
       </p>
       <div class="cta-final__btns">
         <a href="#cursos" class="btn btn-primary btn-xl" id="cta-final-btn">
           Ver Todos os Cursos
         </a>
-        <a href="https://api.whatsapp.com/send/?phone=5583998709828&text=Oiii%2C+gostaria+de+tirar+uma+d%C3%BAvida+sobre+os+cursos"
-           target="_blank" class="btn btn-outline-white btn-xl" id="cta-final-wa">
-          💬 Falar com a Equipe
+        <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+          target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-xl" id="cta-final-wa">
+          💬 Falar com Suporte
         </a>
       </div>
     </div>
@@ -770,7 +1505,7 @@
           <p>Confeitaria artística com amor, dedicação e 16 anos de experiência.</p>
         </div>
         <div class="footer-col">
-          <h5>Cursos</h5>
+          <h5>Cursos Online</h5>
           <ul>
             <li><a href="cursos/sba.html">Start nos Bolos Artísticos</a></li>
             <li><a href="cursos/bolo-floral.html">Masterclass Bolo Floral</a></li>
@@ -781,16 +1516,37 @@
           </ul>
         </div>
         <div class="footer-col">
+          <h5>Atelier & Atendimento</h5>
+          <ul>
+            <li><a
+                href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Quero+encomendar+bolos+e+doces+decorados."
+                target="_blank" rel="noopener noreferrer">🎂 Encomendas de Bolos</a></li>
+            <li><a
+                href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+as+mentorias+particulares."
+                target="_blank" rel="noopener noreferrer">👩‍🍳 Curso Presencial & Mentorias</a></li>
+            <li><a
+                href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+                target="_blank" rel="noopener noreferrer">💬 Suporte - Cursos Online</a></li>
+            <li><a href="#sobre">✦ Sobre Iasmyn</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
           <h5>Conecte-se</h5>
           <div class="footer-social">
-            <a href="https://www.youtube.com/@iasmynmontenegro" target="_blank"
-               class="footer-social-btn footer-social-btn--yt" id="footer-yt">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            <a href="https://www.youtube.com/@iasmynmontenegro" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn footer-social-btn--yt" id="footer-yt">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z" />
+              </svg>
               YouTube
             </a>
-            <a href="https://api.whatsapp.com/send/?phone=%2B5583996020418&text=Ol%C3%A1%2C+gostaria+de+solicitar+o+menu"
-               target="_blank" class="footer-social-btn footer-social-btn--wa" id="footer-wa">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z"/></svg>
+            <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+              target="_blank" rel="noopener noreferrer" class="footer-social-btn footer-social-btn--wa" id="footer-wa">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z" />
+              </svg>
               WhatsApp
             </a>
           </div>
@@ -802,17 +1558,21 @@
     </div>
     <p class="site-footer__legal">
       AVISO LEGAL: Os resultados divulgados não são uma promessa ou garantia. O sucesso depende de dedicação individual.
-      <a href="#" style="color:inherit;text-decoration:underline;">Termos de Uso</a> · 
+      <a href="#" style="color:inherit;text-decoration:underline;">Termos de Uso</a> ·
       <a href="#" style="color:inherit;text-decoration:underline;">Política de Privacidade</a>
     </p>
   </footer>
 
   <!-- FLOATING WA -->
-  <a href="https://api.whatsapp.com/send/?phone=%2B5583996020418&text=Ol%C3%A1%2C+gostaria+de+solicitar+o+menu+para+fazer+minha+matr%C3%ADcula"
-     target="_blank" class="wa-float" id="wa-float" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z"/></svg>
+  <a href="https://api.whatsapp.com/send/?phone=5583999684684&text=Ol%C3%A1%21+Tenho+interesse+no+curso+online+e+gostaria+de+tirar+uma+d%C3%BAvida+antes+de+finalizar+a+minha+compra."
+    target="_blank" rel="noopener noreferrer" class="wa-float" id="wa-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.3.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 01.16 11.9C.16 5.88 5.04 1 11.05 1c2.96 0 5.74 1.15 7.83 3.24a10.98 10.98 0 013.24 7.83c-.003 6.1-4.97 11.06-11.05 11.06zm9.41-20.47A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.89 11.89 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.49-8.42z" />
+    </svg>
   </a>
 
   <script src="script.js"></script>
 </body>
+
 </html>
